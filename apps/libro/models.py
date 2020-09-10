@@ -6,3 +6,7 @@ class Autor(models.Model):
     apellidos = models.CharField(max_length = 220, blank = False, null = False)
     nacionalidad = models.CharField(max_length = 100, blank = False, null = False)
     descripcion = models.TextField(blank = False, null = False)
+
+    class Meta:
+        verbose_name = 'Autor'
+        verbose_name_plural = 'Autores'
