@@ -18,7 +18,7 @@ class Autor(models.Model):
 
 class Libro(models.Model):
     id = models.AutoField(primary_key = True)
-    titulo = models.charField('Titulo', max_length, blank = False, null = False)
+    titulo = models.CharField('Titulo', max_length, blank = False, null = False)
     fecha_publicacion = models.DateField('Fecha de publicacion', blank = False, null = False)
     autor_id = models.OneToOneField(Autor)
 
