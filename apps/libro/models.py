@@ -12,6 +12,20 @@ class Autor(models.Model):
         verbose_name_plural = 'Autores'
         ordering = ['nombre']
 
-
     def __str__(self):
         return self.nombre
+
+
+class Libro(models.Model):
+    id = models.AutoField(primary_key = True)
+    titulo = models.charField('Titulo', max_length, blank = False, null = False)
+    fecha_publicacion = models.DateField('Fecha de publicacion', blank = False, null = False)
+    autor_id = models.OneToOneField(Autor)
+
+    class Meta:
+        verbose_name = 'Libro'
+        verbose_name_plural = 'Libros'
+        ordering = ['titulo']
+
+    def __str__(self):
+        return self.titulo
