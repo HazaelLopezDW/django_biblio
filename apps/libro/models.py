@@ -6,6 +6,7 @@ class Autor(models.Model):
     apellidos = models.CharField(max_length = 220, blank = False, null = False)
     nacionalidad = models.CharField(max_length = 100, blank = False, null = False)
     descripcion = models.TextField(blank = False, null = False)
+    fecha_creacion = models.DateField('Fecha de creacion', auto_now = True, auto_now_add = False)
 
     class Meta:
         verbose_name = 'Autor'
@@ -21,6 +22,7 @@ class Libro(models.Model):
     titulo = models.CharField('Titulo',  max_length = 255, blank = False, null = False)
     fecha_publicacion = models.DateField('Fecha de publicacion', blank = False, null = False)
     autor_id = models.ManyToManyField(Autor)
+    fecha_creacion = models.DateField('Fecha de creacion', auto_now = True, auto_now_add = False)
 
     class Meta:
         verbose_name = 'Libro'
