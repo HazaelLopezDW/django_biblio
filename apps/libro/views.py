@@ -12,4 +12,4 @@ def crearAutor(request):
             return redirect('index')
     else:
         autor_form = AutorForm()
-    return redirect(request,'libro/crear_autor.html', {'autor_form':autor_form})
+    return render(request,'libro/crear_autor.html',{'autor_form':autor_form})
