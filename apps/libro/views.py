@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import AutorForm
+from .models import Autor
 
 def Home(request):
     return render(request, 'index.html')
