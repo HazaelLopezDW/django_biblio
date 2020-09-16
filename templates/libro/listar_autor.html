@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% block title %}
+  Listar Autor
+{% endblock title %}
+{% block body %}
+
+  {% if autores %}
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Nacionalidad</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for autor in autores  %}
+          <tr>
+            <td>{{ autor.id }}</td>
+            <td>{{ autor.nombre }}</td>
+            <td>{{ autor.apellidos }}</td>
+            <td>{{ autor.nacionalidad }}</td>
+            <td>{{ autor.descripcion }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <h1>No existe autores registrados</h1>
+  {% endif %}
+
+{% endblock body %}
