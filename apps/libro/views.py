@@ -21,7 +21,7 @@ def listarAutor(request):
 
 def editarAutor(request,id):
     autor = Autor.objects.get(id = id)
-    if request.Method == 'GET':
+    if request.method == 'GET':
         autor_form = AutorForm(instance = autor)
     else:
         autor_form = AutorForm(request.POST, instance = autor)
