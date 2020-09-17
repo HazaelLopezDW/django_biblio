@@ -18,3 +18,14 @@ def crearAutor(request):
 def listarAutor(request):
     autores = Autor.objects.all()
     return render(request, 'libro/listar_autor.html',{'autores':autores})
+
+def editarAutor(request,id):
+    autor = Autor.objects.get(id = id)
+    if request.Method == 'GET':
+        autor_form = AutorForm(instance = autor)
+    else:
+        autor_form = AutorForm(request.POST, instance = autor)
+        if autor_form.is_valid();
+            autor_form.save()
+        redirect('index')
+    return render(request,'libro/crear_autor.html', {'autor_form':autor_form})
