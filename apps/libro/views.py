@@ -17,7 +17,7 @@ def crearAutor(request):
     return render(request,'libro/crear_autor.html',{'autor_form':autor_form})
 
 def listarAutor(request):
-    autores = Autor.objects.fiter(estado = True)
+    autores = Autor.objects.filter(estado = True)
     return render(request, 'libro/listar_autor.html',{'autores':autores})
 
 def editarAutor(request,id):
