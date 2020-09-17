@@ -21,6 +21,8 @@ def listarAutor(request):
     return render(request, 'libro/listar_autor.html',{'autores':autores})
 
 def editarAutor(request,id):
+    autor_form = None
+    error = None
     try:
         autor = Autor.objects.get(id = id)
         if request.method == 'GET':
