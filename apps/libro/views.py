@@ -25,7 +25,7 @@ def editarAutor(request,id):
         autor_form = AutorForm(instance = autor)
     else:
         autor_form = AutorForm(request.POST, instance = autor)
-        if autor_form.is_valid();
+        if autor_form.is_valid():
             autor_form.save()
         redirect('index')
     return render(request,'libro/crear_autor.html', {'autor_form':autor_form})
