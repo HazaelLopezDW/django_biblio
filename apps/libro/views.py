@@ -40,4 +40,4 @@ def editarAutor(request,id):
 def eliminarAutor(request,id):
     autor = Autor.objects.get(id = id)
     autor.delete()
-    return redirect('listar_autor')
+    return redirect('libro:listar_autor')
