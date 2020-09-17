@@ -40,6 +40,7 @@ def editarAutor(request,id):
 def eliminarAutor(request,id):
     autor = Autor.objects.get(id = id)
     if request.method == 'POST':
-        autor.delete()
+        autor.estado = False
+        autor.save()
         return redirect('libro:listar_autor')
     return render(request, 'libro/eliminar_autor.html',{'autor':autor})
