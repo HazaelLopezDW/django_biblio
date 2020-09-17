@@ -36,3 +36,8 @@ def editarAutor(request,id):
         error = e
 
     return render(request,'libro/crear_autor.html', {'autor_form':autor_form, 'error':error})
+
+def eliminarAutor(request,id):
+    autor = Autor.objects.get(id = id)
+    autor.delete()
+    return redirect('listar_autor')
