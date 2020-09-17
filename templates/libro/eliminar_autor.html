@@ -7,7 +7,7 @@
     {% block body %}
       <form class="" action="" method="post">
         {% csrf_token %}
-        <h2>Desea eliminar el registro{{ autor.nombre,  }}?</h2>
+        <h2>Desea eliminar el registro{{ autor.nombre  }}?</h2>
           <button type="submit" name="crear">Eliminar</button>
           <a href="{% url 'libro:listar_autor' %}">Cancelar</a>
       </form>
